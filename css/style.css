@@ -1059,6 +1059,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
 }
 
+/* #testimonials .testimonial-item p {
+  text-align: left;
+} */
+
 #testimonials .testimonial-item .testimonial-img {
   width: 120px;
   border-radius: 50%;
