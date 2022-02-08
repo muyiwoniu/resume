@@ -55,7 +55,7 @@
 					} );
 				});
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
@@ -81,6 +81,24 @@
 				renderer.render( scene, camera );
 			}
 		</script>
+	<script>
+		var MyFunctions = {
+			/**
+			 * 得到一个最小值到最大值之间的随机整数
+			 * @param {*} min 最小值
+			 * @param {*} max 最大值
+			 */
+			getRandom: function (min, max) {
+				return Math.floor(Math.random() * (max + 1 - min) + min);
+			}
+		};
+		var html = document.querySelector("html");
+		html.onclick = function () {
+			// 0 - 255
+			this.style.background =
+				`rgb(${MyFunctions.getRandom(0, 255)},${MyFunctions.getRandom(0, 255)},${MyFunctions.getRandom(0, 255)})`;
+		}
+	</script>
 </body>
 
 </html>
